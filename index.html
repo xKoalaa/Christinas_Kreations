@@ -22,7 +22,9 @@
       --sage:#8a9a7b;
       --terra:#c08a6a;
 
-      --card: rgba(255,255,255,.82);
+      --paper:#f6f1e7;
+
+      --card: rgba(255,255,255,.88);
       --card-border: rgba(59,47,47,.14);
 
       --shadow: 0 18px 40px rgba(0,0,0,.12);
@@ -36,24 +38,28 @@
       margin:0;
       font-family:"Cormorant Garamond", serif;
       color:var(--ink);
+
       display:flex;
       align-items:center;
       justify-content:center;
 
-      /* Responsive outer padding */
-      padding: clamp(18px, 3vw, 44px) clamp(12px, 3vw, 22px);
+      padding: clamp(20px, 4vw, 56px) clamp(16px, 4vw, 32px);
 
-      /* ✅ Your render background */
+      /* 🎞️ Render-style background behavior */
+      background-color: var(--paper);
       background-image: url("Assets/background.png");
-      background-size: cover;
-      background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
+
+      /* KEY CHANGE ↓ */
+      background-size: contain;
+      background-position: center center;
     }
 
-    /* Mobile fix (prevents iOS scroll jank) */
-    @media (max-width: 900px){
-      body{ background-attachment: scroll; }
+    /* Ensure the background stays visually framed on tall screens */
+    @media (min-height: 900px){
+      body{
+        background-position: center 45%;
+      }
     }
 
     .wrap{
@@ -86,12 +92,12 @@
       background: var(--card);
       border: 1px solid var(--card-border);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
 
-      padding: clamp(18px, 4vw, 30px)
-               clamp(14px, 4vw, 26px)
-               clamp(16px, 3.5vw, 26px);
+      padding:
+        clamp(20px, 4vw, 34px)
+        clamp(16px, 4vw, 30px)
+        clamp(18px, 3.5vw, 28px);
+
       text-align:center;
     }
 
@@ -100,7 +106,7 @@
       height: calc(min(250px, 78vw) * 0.56);
       margin: 0 auto;
       border-radius:999px;
-      background: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.95);
       border: 1.5px solid rgba(59,47,47,.22);
       box-shadow: var(--soft-shadow);
       display:flex;
@@ -122,7 +128,7 @@
       font-size: clamp(28px, 6vw, 36px);
       line-height:1.05;
       padding: 0 clamp(10px, 3vw, 18px);
-      text-shadow: 0 1px 0 rgba(255,255,255,.35);
+      text-shadow: 0 1px 0 rgba(255,255,255,.4);
     }
 
     .brand small{
@@ -135,7 +141,7 @@
     }
 
     .tagline{
-      margin-top: 10px;
+      margin-top: 12px;
       font-style:italic;
       font-size: clamp(13px, 3.4vw, 16px);
       color:var(--ink-soft);
@@ -145,13 +151,13 @@
       width: clamp(58px, 14vw, 76px);
       height:1px;
       background:rgba(59,47,47,.25);
-      margin: clamp(14px, 3vw, 18px) auto;
+      margin: clamp(16px, 3vw, 20px) auto;
     }
 
     .links{
       display:flex;
       flex-direction:column;
-      gap: clamp(9px, 2.2vw, 12px);
+      gap: clamp(10px, 2.2vw, 14px);
     }
 
     .btn{
@@ -160,7 +166,7 @@
       justify-content:center;
       gap: 10px;
 
-      padding: clamp(12px, 3.6vw, 15px);
+      padding: clamp(13px, 3.6vw, 16px);
       border-radius: clamp(12px, 3.5vw, 16px);
 
       color:#fff;
@@ -172,26 +178,9 @@
       transition: transform .15s ease, box-shadow .15s ease;
     }
 
-    .btn i{
-      font-size: 1em;
-      opacity: .95;
-      flex: 0 0 auto;
-    }
-
     .btn:hover{
       transform:translateY(-2px);
       box-shadow:0 14px 28px rgba(0,0,0,.16);
-    }
-
-    /* Better feel on touch devices */
-    @media (hover: none){
-      .btn:hover{
-        transform:none;
-        box-shadow: 0 10px 18px rgba(0,0,0,.12);
-      }
-      .btn:active{
-        transform: translateY(1px);
-      }
     }
 
     .brown{ background:var(--brown); }
@@ -199,7 +188,7 @@
     .terra{ background:var(--terra); }
 
     .footer{
-      margin-top: clamp(14px, 3vw, 18px);
+      margin-top: clamp(16px, 3vw, 20px);
       display:flex;
       justify-content:center;
       gap: clamp(12px, 3vw, 18px);
@@ -216,7 +205,6 @@
 
     .footer a:hover{ opacity:1; }
 
-    /* Hide ornaments on very small screens */
     @media (max-width:380px){
       .ornament{ display:none; }
     }
@@ -234,10 +222,6 @@
       <path d="M70 92c14 5 26 3 40-6" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
       <path d="M62 132c18 2 32-4 46-18" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
       <path d="M56 172c20-4 34-14 44-30" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="112" cy="32" r="7" fill="rgba(59,47,47,.22)"/>
-      <circle cx="128" cy="82" r="6" fill="rgba(59,47,47,.18)"/>
-      <circle cx="108" cy="140" r="5" fill="rgba(59,47,47,.16)"/>
-      <circle cx="88" cy="206" r="6" fill="rgba(59,47,47,.18)"/>
     </svg>
 
     <svg class="ornament right" viewBox="0 0 200 260" aria-hidden="true">
@@ -247,10 +231,6 @@
       <path d="M70 92c14 5 26 3 40-6" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
       <path d="M62 132c18 2 32-4 46-18" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
       <path d="M56 172c20-4 34-14 44-30" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="112" cy="32" r="7" fill="rgba(59,47,47,.22)"/>
-      <circle cx="128" cy="82" r="6" fill="rgba(59,47,47,.18)"/>
-      <circle cx="108" cy="140" r="5" fill="rgba(59,47,47,.16)"/>
-      <circle cx="88" cy="206" r="6" fill="rgba(59,47,47,.18)"/>
     </svg>
 
     <main class="card">
@@ -266,17 +246,17 @@
       <div class="divider"></div>
 
       <div class="links">
-        <a class="btn brown" href="#"><i class="fa-solid fa-fire-flame-curved" aria-hidden="true"></i> Shop Decorative Candles</a>
-        <a class="btn sage" href="#"><i class="fa-solid fa-cheese" aria-hidden="true"></i> Charcuterie Boards</a>
-        <a class="btn terra" href="#"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Custom Orders</a>
-        <a class="btn brown" href="#"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i> Latest Creations</a>
-        <a class="btn sage" href="#"><i class="fa-brands fa-tiktok" aria-hidden="true"></i> TikTok</a>
+        <a class="btn brown" href="#"><i class="fa-solid fa-fire-flame-curved"></i> Shop Decorative Candles</a>
+        <a class="btn sage" href="#"><i class="fa-solid fa-cheese"></i> Charcuterie Boards</a>
+        <a class="btn terra" href="#"><i class="fa-solid fa-pen-nib"></i> Custom Orders</a>
+        <a class="btn brown" href="#"><i class="fa-solid fa-camera-retro"></i> Latest Creations</a>
+        <a class="btn sage" href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
       </div>
 
       <div class="footer">
-        <a href="#" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="#" target="_blank" rel="noreferrer">Facebook</a>
-        <a href="#" target="_blank" rel="noreferrer">TikTok</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">TikTok</a>
       </div>
     </main>
   </div>
