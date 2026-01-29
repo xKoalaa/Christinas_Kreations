@@ -39,11 +39,8 @@
       display:flex;
       align-items:center;
       justify-content:center;
-
-      /* Responsive outer padding */
       padding: clamp(18px, 3vw, 44px) clamp(12px, 3vw, 22px);
 
-      /* 🌸 Pale floral wallpaper + parchment overlay */
       background-image:
         linear-gradient(rgba(246,241,231,.85), rgba(246,241,231,.85)),
         url("https://images.unsplash.com/photo-1524593119771-9db9b3e4f9f5?auto=format&fit=crop&w=1600&q=60");
@@ -52,7 +49,6 @@
       background-attachment: fixed;
     }
 
-    /* Better behavior on iOS (background-attachment: fixed can stutter) */
     @media (max-width: 900px){
       body{ background-attachment: scroll; }
     }
@@ -60,8 +56,6 @@
     .wrap{
       width: min(560px, 100%);
       position:relative;
-
-      /* Adds breathing room that scales */
       padding: clamp(6px, 1.8vw, 18px);
     }
 
@@ -88,9 +82,6 @@
       border: 1px solid var(--card-border);
       box-shadow: var(--shadow);
       backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-
-      /* Responsive inner padding */
       padding: clamp(18px, 4vw, 30px) clamp(14px, 4vw, 26px) clamp(16px, 3.5vw, 26px);
       text-align:center;
     }
@@ -158,17 +149,12 @@
       align-items:center;
       justify-content:center;
       gap: 10px;
-
-      /* Responsive size + tap target */
       padding: clamp(12px, 3.6vw, 15px);
       border-radius: clamp(12px, 3.5vw, 16px);
-
       color:#fff;
       text-decoration:none;
       font-size: clamp(14px, 3.8vw, 17px);
       line-height: 1.2;
-      text-align:center;
-
       box-shadow: 0 10px 18px rgba(0,0,0,.10);
       transition: transform .15s ease, box-shadow .15s ease;
     }
@@ -176,7 +162,6 @@
     .btn i{
       font-size: 1em;
       opacity: .95;
-      flex: 0 0 auto;
     }
 
     .btn:hover{
@@ -184,15 +169,9 @@
       box-shadow:0 14px 28px rgba(0,0,0,.14);
     }
 
-    /* Better feel on touch devices */
     @media (hover: none){
-      .btn:hover{
-        transform:none;
-        box-shadow: 0 10px 18px rgba(0,0,0,.10);
-      }
-      .btn:active{
-        transform: translateY(1px);
-      }
+      .btn:hover{ transform:none; }
+      .btn:active{ transform: translateY(1px); }
     }
 
     .brown{ background:var(--brown); }
@@ -217,7 +196,6 @@
 
     .footer a:hover{ opacity:1; }
 
-    /* Hide ornaments on very small screens */
     @media (max-width:380px){
       .ornament{ display:none; }
     }
@@ -251,19 +229,18 @@
       <div class="divider"></div>
 
       <div class="links">
-        <a class="btn brown" href="#"><i class="fa-solid fa-fire-flame-curved" aria-hidden="true"></i> Shop Decorative Candles</a>
-        <a class="btn sage" href="#"><i class="fa-solid fa-cheese" aria-hidden="true"></i> Charcuterie Boards</a>
-        <a class="btn terra" href="#"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Custom Orders</a>
-        <a class="btn brown" href="#"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i> Latest Creations</a>
-        <a class="btn sage" href="mailto:hello@christinaskreations.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Christina</a>
+        <a class="btn brown" href="#"><i class="fa-solid fa-fire-flame-curved"></i> Shop Decorative Candles</a>
+        <a class="btn sage" href="#"><i class="fa-solid fa-cheese"></i> Charcuterie Boards</a>
+        <a class="btn terra" href="#"><i class="fa-solid fa-pen-nib"></i> Custom Orders</a>
+        <a class="btn brown" href="#"><i class="fa-solid fa-camera-retro"></i> Latest Creations</a>
+        <a class="btn sage" href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
       </div>
 
       <div class="footer">
-  <a href="#" target="_blank" rel="noreferrer">Instagram</a>
-  <a href="#" target="_blank" rel="noreferrer">Facebook</a>
-  <a href="#" target="_blank" rel="noreferrer">TikTok</a>
-</div>
-
+        <a href="#" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="#" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="#" target="_blank" rel="noreferrer">TikTok</a>
+      </div>
     </main>
   </div>
 </body>
