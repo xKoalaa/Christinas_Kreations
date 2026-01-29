@@ -152,3 +152,57 @@
     }
 
     .brown{ background:var(--brown); }
+    .sage{ background:var(--sage); }
+    .terra{ background:var(--terra); }
+
+    .footer{
+      margin-top: clamp(14px, 3vw, 18px);
+      display:flex;
+      justify-content:center;
+      gap: clamp(12px, 3vw, 18px);
+      font-size: clamp(13px, 3.2vw, 14px);
+      flex-wrap: wrap;
+    }
+
+    .footer a{
+      color:var(--ink);
+      text-decoration:none;
+      opacity:.75;
+      border-bottom:1px dotted rgba(59,47,47,.4);
+    }
+
+    .footer a:hover{ opacity:1; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <main class="card">
+      <div class="badge">
+        <div class="brand">
+          Christina’s Kreations
+          <small>HANDMADE</small>
+        </div>
+      </div>
+
+      <p class="tagline">Handcrafted pieces made with care & creativity</p>
+
+      <div class="divider"></div>
+
+      <div class="links">
+        <a class="btn brown" href="#"><i class="fa-solid fa-fire-flame-curved"></i> Shop Decorative Candles</a>
+        <a class="btn sage" href="#"><i class="fa-solid fa-cheese"></i> Charcuterie Boards</a>
+        <a class="btn terra" href="#"><i class="fa-solid fa-pen-nib"></i> Custom Orders</a>
+        <a class="btn brown" href="#"><i class="fa-solid fa-camera-retro"></i> Latest Creations</a>
+        <a class="btn sage" href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+      </div>
+
+      <div class="footer">
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">TikTok</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
