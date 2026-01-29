@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Christina’s Kreations</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Parisienne&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root{
+      --ink:#3b2f2f;
+      --ink-soft: rgba(59,47,47,.72);
+
+      --brown:#7a5c45;
+      --sage:#8a9a7b;
+      --terra:#c08a6a;
+
+      --card: rgba(255,255,255,.82);
+      --card-border: rgba(59,47,47,.14);
+
+      --shadow: 0 18px 40px rgba(0,0,0,.12);
+      --soft-shadow: 0 10px 20px rgba(0,0,0,.08);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
+    body{
+      margin:0;
+      font-family:"Cormorant Garamond", serif;
+      color:var(--ink);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: clamp(18px, 3vw, 44px) clamp(12px, 3vw, 22px);
+
+      /* 🎞️ RENDER BACKGROUND IMAGE */
+      background-image: url("Assets/background.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    /* Mobile fix for iOS */
+    @media (max-width: 900px){
+      body{ background-attachment: scroll; }
+    }
+
+    .wrap{
+      width: min(560px, 100%);
+      position:relative;
+      padding: clamp(6px, 1.8vw, 18px);
+    }
+
+    .card{
+      border-radius: clamp(18px, 3vw, 24px);
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(2px);
+      padding:
+        clamp(18px, 4vw, 30px)
+        clamp(14px, 4vw, 26px)
+        clamp(16px, 3.5vw, 26px);
+      text-align:center;
+    }
+
+    .badge{
+      width: min(250px, 78vw);
+      height: calc(min(250px, 78vw) * 0.56);
+      margin: 0 auto;
+      border-radius:999px;
+      background: rgba(255,255,255,.9);
+      border: 1.5px solid rgba(59,47,47,.22);
+      box-shadow: var(--soft-shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+
+    .badge:before{
+      content:"";
+      position:absolute;
+      inset: clamp(8px, 2vw, 10px);
+      border-radius:999px;
+      border:1px solid rgba(59,47,47,.14);
+    }
+
+    .brand{
+      font-family:"Parisienne", cursive;
+      font-size: clamp(28px, 6vw, 36px);
+      line-height:1.05;
+      padding: 0 clamp(10px, 3vw, 18px);
+    }
+
+    .brand small{
+      display:block;
+      font-family:"Cormorant Garamond", serif;
+      font-size: clamp(10px, 2.7vw, 12px);
+      letter-spacing: 2px;
+      margin-top: 6px;
+      opacity:.75;
+    }
+
+    .tagline{
+      margin-top: 10px;
+      font-style:italic;
+      font-size: clamp(13px, 3.4vw, 16px);
+      color:var(--ink-soft);
+    }
+
+    .divider{
+      width: clamp(58px, 14vw, 76px);
+      height:1px;
+      background:rgba(59,47,47,.25);
+      margin: clamp(14px, 3vw, 18px) auto;
+    }
+
+    .links{
+      display:flex;
+      flex-direction:column;
+      gap: clamp(9px, 2.2vw, 12px);
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: clamp(12px, 3.6vw, 15px);
+      border-radius: clamp(12px, 3.5vw, 16px);
+      color:#fff;
+      text-decoration:none;
+      font-size: clamp(14px, 3.8vw, 17px);
+      line-height: 1.2;
+      box-shadow: 0 10px 18px rgba(0,0,0,.12);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 28px rgba(0,0,0,.16);
+    }
+
+    .brown{ background:var(--brown); }
