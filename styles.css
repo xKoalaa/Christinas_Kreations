@@ -1,102 +1,81 @@
-/* Base page styles */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Playfair Display', serif;
-  background: url('Assets/background.png') center/cover no-repeat;
-  color: #5a3e2b;
-  text-align: center;
+  font-family: 'Georgia', serif;
+  background: url('Assets/background.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #4b2e1e;
 }
 
-/* Main container */
 .container {
   max-width: 600px;
-  margin: auto;
-  padding: 30px 15px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
 }
 
-/* Logo styling */
-.logo {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  display: block;
-  margin: 0 auto 20px;
-}
-
-/* Tagline below the logo */
-.tagline {
+header h1 {
+  font-size: 2.8em;
+  margin: 0;
   font-style: italic;
+  border: 2px solid rgba(0,0,0,0.1);
+  display: inline-block;
+  padding: 10px 30px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
   font-size: 1.2em;
-  margin-bottom: 30px;
-  color: #7a5a3b;
+  font-style: italic;
+  margin: 10px 0 30px;
 }
 
-/* Button layout container */
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Universal button styling */
 .button {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 12px 20px;
+  justify-content: left;
+  gap: 15px;
+  padding: 15px 25px;
+  margin: 10px auto;
   text-decoration: none;
   font-size: 1.1em;
   font-weight: bold;
-  border-radius: 6px;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 3px solid #00000020;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
 }
 
-/* Button icons */
 .button img {
-  height: 28px;
   width: 28px;
-  object-fit: contain;
+  height: 28px;
 }
 
-/* Button hover effect */
 .button:hover {
   transform: scale(1.03);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Button color themes */
+/* Color Variants */
 .red {
-  background-color: #a2543d;
-  color: #fff;
+  background: #a14e3e;
+  color: #fef3e2;
 }
 
 .green {
-  background-color: #676c3b;
-  color: #fff9e8;
+  background: #7b7a4e;
+  color: #fef3e2;
 }
 
 .beige {
-  background-color: #c8b799;
-  color: #4a3d2a;
+  background: #d7c2a4;
+  color: #3a2c1c;
 }
 
 .cream {
-  background-color: #ede3ca;
-  color: #3f3222;
+  background: #f4e9cd;
+  color: #3a2c1c;
 }
-
-/* Footer social icons */
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.footer-icons img {
-  height: 28px;
-  width: 28px;
-  o
