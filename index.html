@@ -2,263 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Christina’s Kreations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christina's Kreations</title>
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Parisienne&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet" />
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <style>
-    :root{
-      --ink:#3b2f2f;
-      --ink-soft: rgba(59,47,47,.72);
-
-      --brown:#7a5c45;
-      --sage:#8a9a7b;
-      --terra:#c08a6a;
-
-      --paper:#f6f1e7;
-
-      --card: rgba(255,255,255,.88);
-      --card-border: rgba(59,47,47,.14);
-
-      --shadow: 0 18px 40px rgba(0,0,0,.12);
-      --soft-shadow: 0 10px 20px rgba(0,0,0,.08);
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-
-    body{
-      margin:0;
-      font-family:"Cormorant Garamond", serif;
-      color:var(--ink);
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      padding: clamp(20px, 4vw, 56px) clamp(16px, 4vw, 32px);
-
-      /* 🎞️ Render-style background behavior */
-      background-color: var(--paper);
-      background-image: url("Assets/background.png");
-      background-repeat: no-repeat;
-
-      /* KEY CHANGE ↓ */
-      background-size: contain;
-      background-position: center center;
-    }
-
-    /* Ensure the background stays visually framed on tall screens */
-    @media (min-height: 900px){
-      body{
-        background-position: center 45%;
-      }
-    }
-
-    .wrap{
-      width: min(560px, 100%);
-      position:relative;
-      padding: clamp(6px, 1.8vw, 18px);
-    }
-
-    /* Side ornaments */
-    .ornament{
-      position:absolute;
-      width: clamp(84px, 14vw, 120px);
-      opacity:.55;
-      pointer-events:none;
-      filter: drop-shadow(0 10px 14px rgba(0,0,0,.08));
-    }
-    .ornament.left{
-      left: clamp(-18px, -4vw, -34px);
-      top: clamp(92px, 16vw, 140px);
-      transform: rotate(-6deg);
-    }
-    .ornament.right{
-      right: clamp(-18px, -4vw, -34px);
-      top: clamp(92px, 16vw, 140px);
-      transform: rotate(6deg) scaleX(-1);
-    }
-
-    .card{
-      border-radius: clamp(18px, 3vw, 24px);
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow);
-
-      padding:
-        clamp(20px, 4vw, 34px)
-        clamp(16px, 4vw, 30px)
-        clamp(18px, 3.5vw, 28px);
-
-      text-align:center;
-    }
-
-    .badge{
-      width: min(250px, 78vw);
-      height: calc(min(250px, 78vw) * 0.56);
-      margin: 0 auto;
-      border-radius:999px;
-      background: rgba(255,255,255,.95);
-      border: 1.5px solid rgba(59,47,47,.22);
-      box-shadow: var(--soft-shadow);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-    }
-
-    .badge:before{
-      content:"";
-      position:absolute;
-      inset: clamp(8px, 2vw, 10px);
-      border-radius:999px;
-      border:1px solid rgba(59,47,47,.14);
-    }
-
-    .brand{
-      font-family:"Parisienne", cursive;
-      font-size: clamp(28px, 6vw, 36px);
-      line-height:1.05;
-      padding: 0 clamp(10px, 3vw, 18px);
-      text-shadow: 0 1px 0 rgba(255,255,255,.4);
-    }
-
-    .brand small{
-      display:block;
-      font-family:"Cormorant Garamond", serif;
-      font-size: clamp(10px, 2.7vw, 12px);
-      letter-spacing: 2px;
-      margin-top: 6px;
-      opacity:.75;
-    }
-
-    .tagline{
-      margin-top: 12px;
-      font-style:italic;
-      font-size: clamp(13px, 3.4vw, 16px);
-      color:var(--ink-soft);
-    }
-
-    .divider{
-      width: clamp(58px, 14vw, 76px);
-      height:1px;
-      background:rgba(59,47,47,.25);
-      margin: clamp(16px, 3vw, 20px) auto;
-    }
-
-    .links{
-      display:flex;
-      flex-direction:column;
-      gap: clamp(10px, 2.2vw, 14px);
-    }
-
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-
-      padding: clamp(13px, 3.6vw, 16px);
-      border-radius: clamp(12px, 3.5vw, 16px);
-
-      color:#fff;
-      text-decoration:none;
-      font-size: clamp(14px, 3.8vw, 17px);
-      line-height: 1.2;
-
-      box-shadow: 0 10px 18px rgba(0,0,0,.12);
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 14px 28px rgba(0,0,0,.16);
-    }
-
-    .brown{ background:var(--brown); }
-    .sage{ background:var(--sage); }
-    .terra{ background:var(--terra); }
-
-    .footer{
-      margin-top: clamp(16px, 3vw, 20px);
-      display:flex;
-      justify-content:center;
-      gap: clamp(12px, 3vw, 18px);
-      font-size: clamp(13px, 3.2vw, 14px);
-      flex-wrap: wrap;
-    }
-
-    .footer a{
-      color:var(--ink);
-      text-decoration:none;
-      opacity:.75;
-      border-bottom:1px dotted rgba(59,47,47,.4);
-    }
-
-    .footer a:hover{ opacity:1; }
-
-    @media (max-width:380px){
-      .ornament{ display:none; }
-    }
-  </style>
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <div class="wrap">
+  <div class="container">
+    
+    <!-- Logo Header -->
+    <header>
+      <img src="Assets/logo.png" alt="Christina's Kreations Logo" class="logo" />
+      <p class="tagline">Handcrafted pieces made with care &amp; creativity</p>
+    </header>
 
-    <!-- Side ornaments -->
-    <svg class="ornament left" viewBox="0 0 200 260" aria-hidden="true">
-      <path d="M98 18c-18 28-14 57 14 78 18 13 34 34 32 64-2 41-43 73-88 70"
-        fill="none" stroke="rgba(59,47,47,.55)" stroke-width="2" stroke-linecap="round"/>
-      <path d="M76 50c10 8 22 11 36 8" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
-      <path d="M70 92c14 5 26 3 40-6" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
-      <path d="M62 132c18 2 32-4 46-18" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
-      <path d="M56 172c20-4 34-14 44-30" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-
-    <svg class="ornament right" viewBox="0 0 200 260" aria-hidden="true">
-      <path d="M98 18c-18 28-14 57 14 78 18 13 34 34 32 64-2 41-43 73-88 70"
-        fill="none" stroke="rgba(59,47,47,.55)" stroke-width="2" stroke-linecap="round"/>
-      <path d="M76 50c10 8 22 11 36 8" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
-      <path d="M70 92c14 5 26 3 40-6" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
-      <path d="M62 132c18 2 32-4 46-18" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
-      <path d="M56 172c20-4 34-14 44-30" fill="none" stroke="rgba(59,47,47,.45)" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-
-    <main class="card">
-      <div class="badge">
-        <div class="brand">
-          Christina’s Kreations
-          <small>HANDMADE</small>
-        </div>
-      </div>
-
-      <p class="tagline">Handcrafted pieces made with care & creativity</p>
-
-      <div class="divider"></div>
-
-      <div class="links">
-        <a class="btn brown" href="#"><i class="fa-solid fa-fire-flame-curved"></i> Shop Decorative Candles</a>
-        <a class="btn sage" href="#"><i class="fa-solid fa-cheese"></i> Charcuterie Boards</a>
-        <a class="btn terra" href="#"><i class="fa-solid fa-pen-nib"></i> Custom Orders</a>
-        <a class="btn brown" href="#"><i class="fa-solid fa-camera-retro"></i> Latest Creations</a>
-        <a class="btn sage" href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-      </div>
-
-      <div class="footer">
-        <a href="#" target="_blank">Instagram</a>
-        <a href="#" target="_blank">Facebook</a>
-        <a href="#" target="_blank">TikTok</a>
-      </div>
+    <!-- Button Grid -->
+    <main class="buttons">
+      <a class="button red" href="#">
+        <img src="Assets/icons/Candle_Transparent.png" alt="Candle Icon" />
+        Shop Decorative Candles
+      </a>
+      <a class="button green" href="#">
+        <img src="Assets/icons/Charcuterie_Boards Transparent.png" alt="Charcuterie Icon" />
+        Charcuterie Boards & Serveware
+      </a>
+      <a class="button beige" href="#">
+        <img src="Assets/icons/orders transparent.png" alt="Pencil Icon" />
+        Custom Orders
+      </a>
+      <a class="button red" href="#">
+        <img src="Assets/icons/Instagram transparent.png" alt="Camera Icon" />
+        See Our Latest Creations
+      </a>
+      <a class="button cream" href="#">
+        <img src="Assets/icons/Email transparent.png" alt="Mail Icon" />
+        Contact Christina
+      </a>
     </main>
+
+    <!-- Footer Social Icons -->
+    <footer>
+      <div class="footer-icons">
+        <a href="#"><img src="Assets/icons/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="Assets/icons/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="Assets/icons/email.png" alt="Email" /></a>
+      </div>
+    </footer>
+
   </div>
 </body>
 </html>
