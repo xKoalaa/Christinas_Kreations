@@ -1,4 +1,4 @@
-/* Typography + Base Styling */
+/* Base page styles */
 body {
   margin: 0;
   padding: 0;
@@ -8,14 +8,14 @@ body {
   text-align: center;
 }
 
-/* Container for center layout */
+/* Main container */
 .container {
   max-width: 600px;
   margin: auto;
   padding: 30px 15px;
 }
 
-/* Logo Styling */
+/* Logo styling */
 .logo {
   width: 100%;
   max-width: 400px;
@@ -24,7 +24,7 @@ body {
   margin: 0 auto 20px;
 }
 
-/* Tagline text */
+/* Tagline below the logo */
 .tagline {
   font-style: italic;
   font-size: 1.2em;
@@ -32,14 +32,14 @@ body {
   color: #7a5a3b;
 }
 
-/* Button Grid */
+/* Button layout container */
 .buttons {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Button Styling */
+/* Universal button styling */
 .button {
   display: flex;
   align-items: center;
@@ -51,20 +51,23 @@ body {
   font-weight: bold;
   border-radius: 6px;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Button icons */
 .button img {
   height: 28px;
   width: 28px;
   object-fit: contain;
 }
 
+/* Button hover effect */
 .button:hover {
   transform: scale(1.03);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Button Color Themes */
+/* Button color themes */
 .red {
   background-color: #a2543d;
   color: #fff;
@@ -85,7 +88,7 @@ body {
   color: #3f3222;
 }
 
-/* Footer Icons */
+/* Footer social icons */
 .footer-icons {
   display: flex;
   justify-content: center;
@@ -96,10 +99,4 @@ body {
 .footer-icons img {
   height: 28px;
   width: 28px;
-  opacity: 0.8;
-  transition: all 0.2s ease-in-out;
-}
-
-.footer-icons img:hover {
-  opacity: 1;
-}
+  o
